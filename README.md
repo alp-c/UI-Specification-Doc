@@ -1,22 +1,17 @@
 # User Management Screen
 ## Main Layout
-| ID | Group Name | H-Align | V-Align | H-Size | V-Size |
-| --- | --- | --- | --- | --- | --- |
-| g1 | Action Bar | Stretch | Top | %100 | 64px
-| g2 | Table View | Center | Top (After g1) | %100 | 
-| g3 | Form View | Center | Top (After g1) | %100 |
+| ID | Group Name | H-Align | V-Align | H-Size | V-Size | Visiblity |
+| --- | --- | --- | --- | --- | --- | --- |
+| g1 | Action Bar | Stretch | Top | %100 | 64px | Visible |
+| g2 | Table View | <ul><li>s1) Center</li><li>s2) Left</li></ul> | Top (After g1) | <ul><li>s1) %100</li><li>s2) %50</li></ul> | %100 | <ul><li>s1) Visible</li><li>s2) Visible</li></ul> |
+| g3 | Form View | <ul><li>s1) Center</li><li>s2) Right</li></ul> | Top (After g1) | <ul><li>s1) %100</li><li>s2) %50</li></ul> | %100 | <ul><li>s1) Hidden</li><li>s2) Visible</li></ul>
 
 ### States
+- Default page state is s1
 - s1 Shows only g2 table view and hides g3 form view
-- s2 Shows both g2 and g3
-- Default state of page is s1
+- s2 Shows both g2 and g3 side by side
 
-| State ID | Element ID | Visiblity | H-Align | V-Align | H-Size | V-Size |
-| --- | --- | --- | --- | --- | --- | --- |
-| s1 | g2 | Visible | Center | Center | %100 | %100 |
-| s1 | g3 | Hidden | - | - | - | - |
-| s2 | g2 | Visible | Left (parent) | Center | %50 | %100 (After g1)
-| s2 | g3 | Visible | Right (parent) | Center | %50 | %100 (After g1)
+
 
 ### 1.1 g1 Action Bar Visual Structure
 | ID | Type | Label | H-Align | V-Align |
@@ -32,6 +27,8 @@
 | 1b | Filter g2 table view data to show only enabled users |
 | 1c | Save user with filled g3 form datas |
 
+
+
 ### 2.1 g2 Table View Visual Structure
 Fetchs data and shows columns below:
 - ID
@@ -40,9 +37,11 @@ Fetchs data and shows columns below:
 - Enabled
 
 ### 2.2 g2 Table View Functional Behaviours
-All column headers contains 'order by' and 'filter' buttons.
+All column headers contains 'order by' and 'filter' right aligned buttons
 - Order By Button: Orders rows by related column's values
 - Filter Button: Filters rows by searched value on column
+
+
 
 ### 3.1 g1 Form View Visual Structure
 - Elements will be grouped by label - input pair
